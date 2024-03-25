@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ITxLog</title>
+</head>
+
+<body>
+
+<h1>ITxLog</h1>
+<p>Please, complete this to get contact.</p>
+
+<label for="name">Name</label>
+<input type="text" id="name">
+<br>
+
+<label for="compagny">Select your compagny:</label>
+
+<select name="compagny" id="compagny">
+<option value="spf">spf</option>
+<option value="sp">sp</option>
+<option value="spfe">spfe</option>
+</select>
+
+<button type="button" onclick="submitFrom()">Envoyer</button>
+
+</body>
+
+<script>
+    function submitFrom(){
+
+        var d = new Date();
+        var date = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+        var heure = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+
+        var name = document.getElementById("name").value;
+        var compagny = document.getElementById("compagny").value;
+
+        var phone = +33786583170;
+
+        window.location.href = "https://api.whatsapp.com/send?phone=" + phone + "&text=! " + "Date : " + date + "-" + heure + " | " + name + " de " + compagny + " est ici."
+    }
+</script>
+</html>
+
